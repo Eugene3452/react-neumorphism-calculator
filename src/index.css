@@ -1,0 +1,105 @@
+:root {
+  --bg: #e9eef7;
+  --shadow-dark: #c7cedb;
+  --shadow-light: #ffffff;
+  --text: #2b3141;
+  --accent: #7e8cff;
+  --operator: #edf2ff;
+  --equals: linear-gradient(145deg, #7e8cff, #5c74ff);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+.calculator {
+  width: 360px;
+  padding: 24px;
+  border-radius: 32px;
+  background: var(--bg);
+  box-shadow:
+    18px 18px 36px var(--shadow-dark),
+    -18px -18px 36px var(--shadow-light);
+}
+
+.display-wrap {
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  box-shadow:
+    inset 10px 10px 18px rgba(199, 206, 219, 0.9),
+    inset -10px -10px 18px rgba(255, 255, 255, 0.8);
+}
+
+.display {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2.4rem;
+  color: var(--text);
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.btn {
+  height: 64px;
+  border-radius: 18px;
+  color: var(--text);
+  background: var(--bg);
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  box-shadow:
+    inset 6px 6px 12px var(--shadow-dark),
+    inset -6px -6px 12px var(--shadow-light);
+}
+
+.operator {
+  background: var(--operator);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.equals {
+  background: var(--equals);
+  color: white;
+  font-weight: 700;
+}
